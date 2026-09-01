@@ -71,10 +71,11 @@ public class SecurityConfig {
                 // Public Authentication Endpoints
                 .requestMatchers("/api/v1/auth/**").permitAll()
 
-                // Public Read-Only Mobility Catalog Endpoints
+                // Public Read-Only Mobility Catalog & Decision Intelligence Endpoints
                 .requestMatchers(HttpMethod.GET, "/api/v1/mobility/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/v1/markets/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/v1/provenance/**").permitAll()
+                .requestMatchers("/api/v1/decisions/**").permitAll()
 
                 // Secured / Admin Endpoints
                 .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
